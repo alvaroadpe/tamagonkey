@@ -2,10 +2,11 @@
 
 ONKEY is a physical, wearable digital pet built entirely from scratch. Inspired by the classic Tamagotchi, it runs on modern IoT architecture. Cramming a 24/7 game into a tiny 3D-printed box meant getting creative with power management, hardware space, and firmware logic.
 
-Here is a breakdown of how it works and why it's built this way.
+DISCLAMER: 
+The soldering of these componets was a tetris puzzle always trying to keep it compact. There are some  multilayered cables and hard to access soldering points or unconvenctional placing like the buzzer on the lateral side instead of on top or bottom side. The 3D files to print the box for the electronics is adapted to the resulting soldering. Use it as an inspiration, but modifications will be needed to fit your own ciruits.
 
 
-# The Hardware: How & Why It's Connected
+# The Hardware:
 
 To make this pocket-sized, every millimeter of space and milliamp of power matters. 
 
@@ -16,8 +17,9 @@ To make this pocket-sized, every millimeter of space and milliamp of power matte
 - Audio & Controls:** 3 tactile buttons and a piezo buzzer. I used the ESP32's internal pull-up resistors for the buttons so I wouldn't have to solder external ones. I also wired a 10kΩ "bleed" resistor in parallel with the buzzer to ground—this prevents parasitic electricity from causing annoying "ghost beeps" when the pet is supposed to be sleeping.
 
 
-# The Software: How It Works
+# The Software:
 
 - Time-Travel Math (Deep Sleep):** Leaving a processor running 24/7 will kill a small battery in hours. After 15 seconds of inactivity, ONKEY turns off the screen and puts the CPU to sleep. To keep the game going, it leaves its internal clock running. When you wake it up (or when an internal timer wakes it up), the code calculates exactly how much time has passed in microseconds (`getNowUs()`) and retroactively deducts the pet's hunger and happiness all at once.
 - Smoothing the Battery Meter (ADC Filtering):** The voltage divider is highly sensitive to electrical noise. Every time the screen refreshed, the voltage dipped, causing fake "Low Battery" warnings. Since there was no room for physical filtering capacitors in the box, I fixed it in software: the code takes 5 rapid analog readings in 10 milliseconds and averages them out to stabilize the meter.
 - The Single-Use Save File (OTA Updates):** ONKEY updates its firmware wirelessly over Wi-Fi. To prevent losing your pet's stats during an update, the game saves to flash memory (NVS). However, if the battery died naturally, a normal reboot would load that Wi-Fi save file and accidentally resurrect a dead pet! To fix this, the code uses a "Single-Use Checkpoint." It only saves right when a Wi-Fi transfer begins, and upon rebooting, it immediately deletes the backup file so actions have permanent consequences again.
+
