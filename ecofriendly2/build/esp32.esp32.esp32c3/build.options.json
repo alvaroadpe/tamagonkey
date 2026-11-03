@@ -1,0 +1,10 @@
+{
+  "additionalFiles": "..\\..",
+  "builtInLibrariesFolders": "C:\\Users\\alvar\\AppData\\Local\\Arduino15\\libraries",
+  "compiler.optimization_flags": "-Os",
+  "customBuildProperties": "",
+  "fqbn": "esp32:esp32:esp32c3:UploadSpeed=921600,CDCOnBoot=default,CPUFreq=160,FlashFreq=80,FlashMode=qio,FlashSize=4M,PartitionScheme=min_spiffs,DebugLevel=none,EraseFlash=none,JTAGAdapter=default,ZigbeeMode=default",
+  "hardwareFolders": "C:\\Users\\alvar\\AppData\\Local\\Arduino15\\packages\\esp32\\hardware\\esp32\\3.3.10,C:\\Users\\alvar\\AppData\\Local\\Arduino15\\packages\\esp32\\hardware\\esp32\\3.3.10",
+  "otherLibrariesFolders": "c:\\Local Disk D\\Documents\\Arduino\\libraries",
+  "sketchLocation": "C:\\Local Disk D\\Documents\\Arduino\\tamagonkey\\ecofriendly2"
+}
