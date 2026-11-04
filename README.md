@@ -1,6 +1,6 @@
 # ONKEY: A 3D-Printed ESP32 Virtual Pet
 
-![ONKEY Placeholder - Replace with a photo of the device]
+<img width="57" height="32" alt="happy onkey inverse" src="https://github.com/user-attachments/assets/706758c5-6f06-41b8-aa9e-c01a3a0e773d" />
 
 ONKEY is a physical, wearable digital pet built entirely from scratch. Inspired by the classic Tamagotchi, it runs on modern IoT architecture. Cramming a 24/7 game into a tiny 3D-printed box meant getting creative with power management, hardware space, and firmware logic.
 
